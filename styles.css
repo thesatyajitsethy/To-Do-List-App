@@ -1,0 +1,253 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #141e30, #243b55);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container {
+  width: 95%;
+  max-width: 600px;
+  background: #1e2735;
+  color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1s ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.app-container:hover {
+  box-shadow: 0 0 30px #00d4ff, 0 0 60px #ff00e6;
+  transform: scale(1.05);
+}
+
+header h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 32px;
+  color: #00d4ff;
+  text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+  animation: glow 1.5s infinite;
+}
+
+.todo-input {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #00d4ff;
+  border-radius: 8px;
+  outline: none;
+  font-size: 18px;
+  background: #101721;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.todo-input input:focus {
+  border-color: #ff00e6;
+  box-shadow: 0 0 10px #ff00e6;
+}
+
+.todo-input button {
+  padding: 15px 25px;
+  background: linear-gradient(to right, #00d4ff, #ff00e6);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-input button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff00e6;
+}
+
+#todoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#todoList li {
+  padding: 15px;
+  margin: 15px 0;
+  background: #2c3e50;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease;
+}
+
+#todoList li:hover {
+  background: linear-gradient(to right, #00d4ff, #ff00e6);
+  box-shadow: 0 0 15px #ff00e6, 0 0 30px #00d4ff;
+  color: #000;
+}
+
+#todoList li span {
+  flex: 1;
+  font-size: 18px;
+}
+
+#todoList li button {
+  background: #ff5c5c;
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#todoList li button:hover {
+  transform: scale(1.1);
+  background-color: #ff2e2e;
+}
+
+footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  color: #fff;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer a {
+  color: #00d4ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff00e6;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  font-size: 16px;
+  color: #00d4ff;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #ff00e6;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff00e6, 0 0 40px #ff00e6;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  .todo-input {
+    flex-direction: column;
+  }
+
+  .todo-input input,
+  .todo-input button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .todo-input button {
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+
+  #todoList li {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  .social-icon {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .todo-input button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  #todoList li span {
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  .social-icon {
+    font-size: 14px;
+  }
+}
